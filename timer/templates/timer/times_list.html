@@ -1,0 +1,19 @@
+{% extends 'timer/base.html' %}
+
+{% block content %}
+    <h1>Sariyah's Rubik's Cube Time Storage</h1>
+
+    <h2>Enter your time: </h2>
+    <form method="post">
+        {% csrf_token %}  
+        {{ form.as_p }}
+        <button type="submit" class="savebtnprimary">Save Time</button>
+    </form>
+
+    <h2>Previous Times</h2>
+        <ul>
+        {% for time in times %}
+            <li><a href="{% url 'time_detail' pk=time.pk %}">{{ time.time }} - {{ time.date }}</a></li>
+        {% endfor %}
+        </ul>
+{% endblock %}

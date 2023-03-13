@@ -1,0 +1,16 @@
+{% extends 'timer/base.html' %}
+
+{% block content %}
+    <h1>Your Time: </h1>
+    {% if times.pk == 1 %}
+    <p> {{ times.pk }}st Time:</p>
+    {% elif times.pk == 2 %}
+    <p> {{ times.pk }}nd Time:</p>
+    {% elif times.pk == 3 %}
+    <p> {{ times.pk }}rd Time:</p>
+    {% else %}
+    <p> {{ times.pk }}th Time:</p>
+    {% endif %}
+    <p>{{ times.time }} - {{ times.date }}</p>
+    
+{% endblock %}
