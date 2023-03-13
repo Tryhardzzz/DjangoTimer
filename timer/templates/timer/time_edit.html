@@ -1,0 +1,10 @@
+{% extends 'timer/base.html' %}
+
+{% block content %}
+<h1>Enter your time:</h1>
+<form method="post">
+    {% csrf_token %}  
+    {{ form.as_p }}
+    <button type="submit" class="savebtnprimary">Save Time</button>
+</form>
+{% endblock %}

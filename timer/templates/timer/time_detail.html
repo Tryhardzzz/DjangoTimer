@@ -12,5 +12,10 @@
     <p> {{ times.pk }}th Time:</p>
     {% endif %}
     <p>{{ times.time }} - {{ times.date }}</p>
-    
+
+    <aside>
+        <a href="{% url 'time_edit' pk=times.pk %}">
+            ChangeTime
+        </a>
+    </aside>
 {% endblock %}
